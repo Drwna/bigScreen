@@ -12,8 +12,7 @@ import {Chart8} from '../components/chart-8';
 import {Chart9} from '../components/chart-9';
 
 export const Home = () => {
-
-
+  const year = new Date().getFullYear();
   return (
     <div className="home">
       <header style={{backgroundImage: `url(${headerBg})`}}/>
@@ -29,7 +28,7 @@ export const Home = () => {
         <section className="bordered section3">
           <Chart5/>
         </section>
-        <section className=" section4">
+        <section className="section4">
           <Chart6/>
           <div className="bordered 年龄段">
             <h2>犯罪人员年龄段分布</h2>
@@ -43,7 +42,7 @@ export const Home = () => {
         <section className="bordered section5"></section>
       </main>
       <footer>
-        &copy; 2022
+        &copy; {year}
       </footer>
     </div>
   );
