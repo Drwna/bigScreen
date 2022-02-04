@@ -1,15 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
+import {px} from '../shared/px';
+import {createEchartsOptions} from '../shared/create-echarts-options';
 
 const Chart1 = () => {
-
-  const px = (n) => n / 2420 * (window as any).pageWidth;
-
   const divRef = useRef(null);
   useEffect(() => {
-
     const myChart = echarts.init(divRef.current);
-    myChart.setOption({
+    myChart.setOption(createEchartsOptions({
       title: {show: false},
       legend: {show: false},
       xAxis: {
@@ -49,15 +47,13 @@ const Chart1 = () => {
           data: [5, 20, 24, 10, 10, 32, 8, 12, 19, 6],
         },
       ]
-    });
+    }));
   }, []);
 
   return (
-
     <div className="bordered 管辖统计">
       <h2>案发派出所管辖统计</h2>
       <div ref={divRef} className="chart">
-
       </div>
     </div>
   );
